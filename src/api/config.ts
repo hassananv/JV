@@ -29,7 +29,7 @@ export const DB_SCHEMA = process.env.DB_SCHEMA || 'dbo';
 export const AZURE_KEY = process.env.AZURE_KEY || "";
 
 export const DB_CONFIG = {
-	client: 'mssql',
+	client: 'postgres',
 	connection: {
 		host: DB_HOST,
 		user: DB_USER,
