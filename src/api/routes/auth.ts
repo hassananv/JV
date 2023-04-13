@@ -29,6 +29,7 @@ export function configureAuthentication(app: Express) {
       routes: {
         // login: "/api/auth/login",
         //logout: "/api/auth/logout",
+        callback: '/api/callback',
         postLogoutRedirect: FRONTEND_URL
       }
     })
@@ -50,11 +51,7 @@ export function configureAuthentication(app: Express) {
         redirect_uri: BASE_URL + "/callback"
       }
     })
-  );
-
-  app.get("/api/callback", (req, res) =>
-    res.redirect("/callback")
-  );  
+  ); 
 
   app.get("/api/auth/profile", async (req, res) => {
     if (req.oidc.isAuthenticated()) {
